@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block Title %} Home {% endblock Title %}
+
+
+{% block content %}
+    <div>
+    <ul>
+    {% for post in object_list %}
+        <h1><a href="{% url 'post_detail' post.pk %}">{{post.title}} </a></h1>
+        <p>{{post.body | slice:'100'}}</p>
+        <p>{{post.author}}</p>
+        <p>{{post.date}}</p>
+
+        <p><a href="{% url 'update_post' post.pk %}">update_post</a></p>
+        <p><a href="{% url 'delete_post' post.pk %}">delete_post</a></p>
+    {% endfor %}
+    </ul>
+
+        <p><a href="{% url 'create_post' %}">create_post</a></p>
+
+    </div>
+{% endblock content %}

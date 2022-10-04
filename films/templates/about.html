@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block Title %} About {% endblock Title %}
+
+{% block content %}
+    <div>
+        <h1>{{post.title}}</h1>
+        <p>{{post.body}}</p>
+        <p>{{post.author}}</p>
+        <p>{{post.date}}</p>
+    </div>
+{% endblock content %}
