@@ -1,1 +1,4 @@
 .idea/
+films/__pycache__
+FilmsCorp/__pycache__
+films/migrations
