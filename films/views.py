@@ -24,7 +24,7 @@ class CreatePageView(CreateView):
 class UpdatePageView(UpdateView):
     model = Post
     template_name = 'update_post.html'
-    fields = ['title', 'body']
+    fields = ['title', 'body', 'date']
 
 
 class DeletePageView(DeleteView):
