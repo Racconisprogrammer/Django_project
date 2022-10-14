@@ -6,6 +6,12 @@
 </head>
 <body>
 <header><h1><a href="{% url 'home' %}">Home</a></h1></header>
+{% if user.is_authenticated %}
+    <p>Welcome! {{ user.username }}</p>
+    <p><a href="{% url 'logout' %}">Log out</a></p>
+{% else %}
+    <a href="{% url 'login' %}">Log in</a>
+{% endif %}
 <h1>Для всех сайтов открую эту ветку</h1>
 <h1>Иной проект или другой</h1>
 
