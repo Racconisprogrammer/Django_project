@@ -4,12 +4,17 @@
 
 
 {% block content %}
-    <div>
+    <div class="card">
     <ul>
     {% for post in object_list %}
+
+        {% if post.photo %}
+            <img class="card-img-top" src="{{post.photo.url}}" alt="">
+        {% endif %}
         <h1><a href="{% url 'post_detail' post.pk %}">{{post.title}} </a></h1>
+
         <p>{{post.body | slice:'100'}}</p>
-        <p>{{post.author}}</p>
+        <p class="text-muted">{{post.author}}</p>
         <p>{{post.date}}</p>
 
         <p><a href="{% url 'update_post' post.pk %}">update_post</a></p>

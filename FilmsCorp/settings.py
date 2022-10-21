@@ -37,8 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'films',
+    # module
+    'crispy_forms',
+    # app
     'accounts',
+    'films',
+    
 ]
 
 MIDDLEWARE = [
@@ -101,7 +105,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -124,14 +127,26 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
+
+
+
+
+
+
 #authencation of user
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 
+#other models
 
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
 
 
 
