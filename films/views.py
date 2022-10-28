@@ -11,6 +11,7 @@ def index(request):
     return render(request, 'post.html', {'posts': posts})
 
 class HomePageView(ListView):
+    paginate_by = 2
     model = Post
     template_name = 'index.html'
 
